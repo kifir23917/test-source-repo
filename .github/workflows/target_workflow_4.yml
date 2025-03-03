@@ -14,12 +14,14 @@ jobs:
           repo: test-target-repository
           owner: kifir23917
           workflow: target_workflow.yml
+          ref: main
       - name: Await Run ID ${{ steps.return_dispatch.outputs.run_id }}
         uses: Codex-/await-remote-run@v1.0.0
         with:
           token: ${{ github.token }}
           repo: kifir23917
           owner: target_workflow.yml
+          ref: main
           run_id: ${{ steps.return_dispatch.outputs.run_id }}
           run_timeout_seconds: 300 # Optional
           poll_interval_ms: 5000 # Optional
