@@ -1,0 +1,14 @@
+name: Trigger Target Workflow 5
+
+on: [workflow_dispatch]
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    name: "Trigger Project Test"
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: kifir23917
+          repo: test-target-repository
+          workflow_file_name: target_workflow.yml
+          github_token: ${{ secrets.PAT }}
