@@ -1,0 +1,6 @@
+name: Trigger kifir239/test-target-repository target_workflow
+on:
+  workflow_dispatch:
+jobs:
+  call-workflow-in-another-repo:
+    uses: kifir239/test-target-repository/.github/workflows/target_workflow.yml@v1
