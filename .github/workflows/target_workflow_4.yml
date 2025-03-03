@@ -10,7 +10,7 @@ jobs:
         uses: codex-/return-dispatch@v1
         id: return_dispatch
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.PAT }}
           repo: test-target-repository
           owner: kifir23917
           workflow: target_workflow.yml
@@ -18,7 +18,7 @@ jobs:
       - name: Await Run ID ${{ steps.return_dispatch.outputs.run_id }}
         uses: Codex-/await-remote-run@v1.0.0
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.PAT }}
           repo: kifir23917
           owner: target_workflow.yml
           ref: main
