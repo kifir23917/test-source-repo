@@ -11,5 +11,5 @@ jobs:
           owner: rusefi
           repo: fw-private
           workflow_file_name: update-rusefi-reference.yaml
-          ref: master
+          ref: kifir-test
           github_token: ${{ secrets.PAT }}
