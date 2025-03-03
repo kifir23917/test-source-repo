@@ -1,0 +1,15 @@
+name: Trigger fw-private
+
+on: [workflow_dispatch]
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    name: "Trigger Project Test"
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: rusefi
+          repo: fw-private
+          workflow_file_name: update-rusefi-reference.yaml
+          ref: master
+          github_token: ${{ secrets.PAT }}
